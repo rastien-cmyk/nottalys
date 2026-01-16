@@ -1418,8 +1418,8 @@
                         <div class="playlist-item active" data-index="0">
                             <div class="playlist-number">1</div>
                             <div class="playlist-info">
-                                <div class="playlist-title">Love Song</div>
-                                <div class="playlist-artist">Baz David</div>
+                                <div class="playlist-title">L'Horizon Partagé</div>
+                                <div class="playlist-artist">Entrée de cérémonie</div>
                             </div>
                         </div>
                         <div class="playlist-item" data-index="1">
@@ -1429,13 +1429,8 @@
                                 <div class="playlist-artist">Sophie & Marc</div>
                             </div>
                         </div>
-                        <div class="playlist-item" data-index="2">
-                            <div class="playlist-number">3</div>
-                            <div class="playlist-info">
-                                <div class="playlist-title">Éternellement</div>
-                                <div class="playlist-artist">Julie & Thomas</div>
-                            </div>
-                        </div>
+                        
+
                     </div>
 
                     <!-- Élément audio HTML5 (caché) -->
@@ -1554,19 +1549,14 @@
         // Playlist avec les fichiers audio
         const playlist = [
             {
-                title: "Love Song",
-                artist: "Baz David",
-                src: "media/audio/examples/love-song.mp3"
+                title: "L'Horizon Partagé",
+                artist: "Entrée de cérémonie",
+                src: "media/audio/examples/L-Horizon-Partage.mp3"
             },
             {
                 title: "Notre Histoire",
                 artist: "Sophie & Marc",
                 src: "/media/audio/examples/notre-histoire.mp3"
-            },
-            {
-                title: "Éternellement",
-                artist: "Julie & Thomas",
-                src: "/media/audio/examples/eternellement.mp3"
             }
         ];
 
@@ -1729,9 +1719,9 @@
         });
 
 
- // ============================================
-        // STEPS
-        // ============================================
+// ============================================
+// STEPS
+// ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
   if (window.innerWidth > 768) return;
@@ -1768,11 +1758,12 @@ document.addEventListener('DOMContentLoaded', () => {
   steps.addEventListener('scroll', updateGradients);
 });
 
-    </script>
+   
 
 
-
-<script>
+// ============================================
+// FORM
+// ============================================
 const form = {
   names: document.getElementById('names'),
   email: document.getElementById('email'),
