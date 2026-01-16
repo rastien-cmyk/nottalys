@@ -1455,7 +1455,7 @@
             
             <div class="form-container">
             
-                 <form target="_blank" action="https://formsubmit.co/rastien@gmail.com" method="POST">
+                 <form action="https://formsubmit.co/rastien@gmail.com" method="POST">
                     <div class="form-header">
                         <h2>Racontez-nous votre histoire</h2>
                         <p class="microcopy">Quelques mots suffisent pour commencer. Nous vous répondrons personnellement.</p>
@@ -1464,46 +1464,25 @@
                     <div class="form-card" id="formCard">
                         <div class="form-group">
                             <label class="form-label">Vos prénoms</label>
-                            <input 
-                                type="text" 
-                                id="names" 
-                                class="form-input" 
-                                name="prenoms"
-                                placeholder="Marie & Thomas"
-                            >
+                            <input type="text" id="names" class="form-input" name="prenoms" placeholder="Marie & Thomas">
                             <span class="error-message" id="names-error"></span>
                         </div>
 
                         <div class="form-group">
                             <label class="form-label">Votre adresse email</label>
-                            <input 
-                                type="email" 
-                                id="email" 
-                                class="form-input" 
-                                name="email"
-                                placeholder="marie.thomas@email.com"
-                            >
+                            <input type="email" id="email" class="form-input" name="email" placeholder="marie.thomas@email.com">
                             <span class="error-message" id="email-error"></span>
                         </div>
 
                         <div class="form-group">
                             <label class="form-label">Parlez-nous de votre histoire, de ce moment, ou simplement de votre envie.</label>
-                            <textarea 
-                                id="message" 
-                                class="form-textarea" 
-                                message=""
-                                placeholder="Notre histoire a commencé..."
-                            ></textarea>
+                            <textarea id="message" class="form-textarea" name="message" message="" placeholder="Notre histoire a commencé..."></textarea>
                             <span class="error-message" id="message-error"></span>
                         </div>
 
-                        <input type="hidden" name="_next" value="https://rastien-cmyk.github.io/nottalys/landing-with-form.html#commencer">
+                        <!--<input type="hidden" name="_next" value="https://rastien-cmyk.github.io/nottalys/landing-with-form.html#commencer">-->
                         <input type="hidden" name="_captcha" value="false">
                         <input type="text" name="_honey" style="display:none">
-
-
-
-
 
 
                         <button type="submit" class="btn-submit" id="submitBtn">
