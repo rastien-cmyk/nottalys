@@ -3,188 +3,434 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrée de cérémonie mariage – Musique personnalisée (mairie, cérémonie, église) | NOTTALYS</title>
-    <meta name="description" content="Découvrez un exemple de musique d’entrée de cérémonie personnalisée pour un mariage : une chanson unique pour accompagner l’arrivée des mariés, quel que soit le lieu ou le style de cérémonie.">
-
-    <meta property="og:title" content="Entrée de cérémonie personnalisée – NOTTALYS">
-    <meta property="og:description" content="Exemple de musique d’entrée de cérémonie unique, pensée pour accompagner votre arrivée sous le signe de l’émotion.">
-    <meta property="og:type" content="website" />    
+    <title>Entrée de Cérémonie - Exemple NOTTALYS</title>
     
-    <meta property="og:image" content="https://nottalys.com/media/images/chanson-mariage-personnalisee-ia-nottalys.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Un couple de mariés, illustrant le service de chanson personnalisée Nottalys assisté par l'IA" />
-    <meta property="og:url" content="https://nottalys.com/" />    
-
-    <link rel="preload" as="image" href="media/images/hero.webp">
-
-
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-NMZDW75R');</script>
-    <!-- End Google Tag Manager -->
-
-
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prata&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
     
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
-    <link rel="canonical" href="https://nottalys.com/" />
+    
+    <style>
+        /* Spécifique à la page exemple */
+        .example-hero {
+            position: relative;
+            text-align: center;
+            padding: var(--space-3xl) var(--space-md);
+            background: url('../media/images/hero.webp');
+            background-size: cover;
+            background-position: center;
+        }
 
+        .example-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.85);
+            z-index: 1;
+        }
 
+        .example-hero > * {
+            position: relative;
+            z-index: 2;
+        }
 
+        .example-hero h1 {
+            font-size: var(--font-size-3xl);
+            margin-bottom: var(--space-md);
+        }
+
+        .example-hero .tagline {
+            font-size: var(--font-size-lg);
+            font-family: var(--font-serif);
+            font-style: italic;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .example-hero .description {
+            font-size: var(--font-size-md);
+            color: var(--color-text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Mini Audio Player */
+        .mini-player {
+            max-width: 500px;
+            margin: calc(var(--space-xl) * -1) auto var(--space-2xl);
+            background: var(--color-white);
+            padding: var(--space-md);
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            position: relative;
+            z-index: 10;
+        }
+
+        .mini-player .play-btn {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            background: var(--color-primary);
+            border-radius: var(--radius-full);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-fast);
+            color: var(--color-white);
+            font-size: 18px;
+        }
+
+        .mini-player .play-btn:hover {
+            background: var(--color-primary-dark);
+            transform: scale(1.05);
+        }
+
+        .mini-player .play-btn.playing {
+            background: var(--color-primary-dark);
+        }
+
+        .mini-player .track-info {
+            flex: 1;
+        }
+
+        .mini-player .track-title {
+            font-family: var(--font-serif);
+            font-size: var(--font-size-md);
+            margin-bottom: 4px;
+        }
+
+        .mini-player .track-artist {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-tertiary);
+            font-family: var(--font-sans);
+        }
+
+        .mini-player .progress-mini {
+            width: 100%;
+            height: 4px;
+            background: var(--color-border);
+            border-radius: 2px;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+
+        .mini-player .progress-mini-fill {
+            height: 100%;
+            background: var(--color-primary);
+            border-radius: 2px;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        /* Info Block */
+        .info-block {
+            background: var(--color-background-alt);
+            padding: var(--space-2xl) var(--space-md);
+            text-align: center;
+        }
+
+        .info-block p {
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--color-text-secondary);
+        }
+
+        /* Section Numbers */
+        .section-number {
+            font-size: 64px;
+            font-weight: var(--font-weight-light);
+            color: var(--color-border);
+            font-family: var(--font-serif);
+            line-height: 1;
+        }
+
+        .content-section {
+            padding: var(--space-3xl) var(--space-md);
+        }
+
+        .content-section h2 {
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--space-sm);
+        }
+
+        .content-grid {
+            display: grid;
+            /*grid-template-columns: 64px 1fr;*/
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            align-items: start;
+            margin-bottom: var(--space-xl);
+            padding-bottom: var(--space-xl);
+            border-bottom: 1px solid;
+            border-color: var(--color-border);
+        }
+
+        .content-grid:last-child {
+            display: grid;
+            /*grid-template-columns: 64px 1fr;*/
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            align-items: start;
+            margin-bottom: var(--space-xl);
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .content-details {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+        }
+
+        .detail-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .detail-label {
+            font-family: var(--font-sans);
+            font-size: var(--font-size-sm);
+            color: var(--color-text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .detail-value {
+            font-family: var(--font-sans);
+            font-size: var(--font-size-md);
+            color: var(--color-text-primary);
+        }
+
+        .detail-text {
+            font-family: var(--font-sans);
+            font-size: var(--font-size-md);
+            color: var(--color-text-secondary);
+            line-height: var(--line-height-loose);
+        }
+
+        .detail-text ul {
+            margin: var(--space-md) 0;
+            padding-left: var(--space-lg);
+        }
+
+        .detail-text li {
+            margin-bottom: var(--space-sm);
+        }
+
+        /* Image Section */
+        .image-section {
+            background: var(--color-background-alt);
+            padding: var(--space-3xl) var(--space-md);
+        }
+
+        .image-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-2xl);
+            align-items: center;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .image-content img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: var(--radius-sm);
+        }
+
+        .image-content h2 {
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--space-md);
+        }
+
+        .image-content p {
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-md);
+        }
+
+        .highlight-text {
+            background: var(--color-white);
+            padding: var(--space-lg);
+            border-radius: var(--radius-sm);
+            font-style: italic;
+            margin-top: var(--space-lg);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .example-hero h1 {
+                font-size: var(--font-size-xl);
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+            }
+
+            .section-number {
+                font-size: 48px;
+            }
+
+            .image-content {
+                grid-template-columns: 1fr;
+            }
+
+            .image-content img {
+                height: 300px;
+            }
+
+            .mini-player {
+                margin: calc(var(--space-md) * -1) var(--space-md) var(--space-xl);
+            }
+        }
+    </style>
 </head>
 <body>
-
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMZDW75R"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-
-
-
-   
     <div class="back-header">
-        <a href="/" class="back-link"><span>←</span><span>RETOUR</span></a>
-
-
+        <a href="exemples.html" class="back-link">
+            <span>←</span>
+            <span>RETOUR</span>
+        </a>
         <div class="logo">
-            <a href="/#">
-            <img src="/media/images/logo-nottalys.svg" alt="Nottalys logo" />
+            <a href="index.html">
+                <img src="../media/images/logo-nottalys.svg" alt="Nottalys logo" width="175" height="43" />
             </a>
         </div>
     </div>
 
-
-    <!-- <header class="back">
-        <div class="header-container">
-            <a href="index.html" class="back-link"><span>←</span><span>RETOUR</span></a>
-            <div class="logo">
-                <img src="media/images/logo-nottalys.svg" alt="Nottalys logo" width="175" height="43" />
-            </div>
-            <div></div>
-        </div>
-    </header>
-
-    <div class="header-spacer"></div>  -->
-
-
-
     <main>
-        <section class="hero">
+        <section class="example-hero">
             <div class="container">
-                <h1>Entrée de cérémonie</h1>
-                <h3>Une chanson qui raconte votre histoire</h3>
-                <p class="subtitle">Exemple de création NOTTALYS pour une chanson d’entrée de cérémonie personnalisée, imaginée pour accompagner l’arrivée des mariés avec émotion, sensibilité et authenticité. Chaque note est pensée pour refléter votre histoire, vos détails, vos impressions, vos gestes, loin des musiques génériques que l’on entend partout.
-.</p>
+                <h1>Entrée de Cérémonie</h1>
+                <p class="tagline">Une chanson qui raconte votre histoire</p>
+                <p class="description">Exemple de création NOTTALYS pour une première danse, entièrement personnalisée à partir de l'histoire du couple.</p>
             </div>
         </section>
 
-        <div class="stats container">
-            <div>NOTTALYS crée des chansons de mariage uniques et sur-mesure. Voici trois exemples de créations, conçues pour accompagner différents moments de la journée : la première danse, l'ouverture de bal et le vin d'honneur. Ces exemples montrent comment l’IA permet aujourd’hui de créer une chanson de mariage personnalisée, sans compromis sur l’émotion.
-
-
-
-                <h2>01 — Le contexte</h2>
-
-Prénoms
-Emma & Lucas
-
-Type de mariage
-Mariage champêtre
-
-Moment clé
-Première danse des mariés
-
-Emma et Lucas souhaitaient une première danse à leur image : sincère, intime, loin des musiques entendues et réentendues.
-Ils imaginaient un instant suspendu, presque hors du temps, uniquement pour eux deux, avant que la fête ne commence vraiment.
-
-<h2>02 — Direction musicale</h2>
-
-Style
-Émotionnel / acoustique
-
-Ambiance
-Intime et poétique
-
-Voix
-Masculine, chaude et posée
-
-Tempo
-Lent, ballade
-
-Une musique pensée pour accompagner un moment fort, sans jamais le surcharger.
-La voix guide l’émotion, la mélodie laisse respirer l’instant.
-
-<h2>03 — Ce que nous personnalisons</h2>
-
-Les prénoms des mariés intégrés naturellement aux paroles
-
-Le lieu de leur rencontre (un café parisien)
-
-La date de leur mariage
-
-Des détails sensoriels précis (le parfum du café, la pluie sur les vitres)
-
-L’atmosphère émotionnelle de leur histoire
-
-Leurs promesses, exprimées avec pudeur et sincérité
-
-Chaque élément est choisi pour résonner avec leur vécu.
-
-<h2>Pourquoi cette chanson est unique</h2>
-
-Cette chanson n’existe que pour Emma & Lucas.
-Les paroles racontent leur histoire : une rencontre presque anodine, des doutes, puis l’évidence.
-La mélodie a été composée spécialement pour correspondre à leur sensibilité, créant un moment d’émotion pure lors de leur première danse.
-
-
-Cette création NOTTALYS s’adapte à tous les types de cérémonies de mariage : civiles, laïques ou traditionnelles, en intérieur comme en extérieur.
-Elle illustre une direction possible.
-
-Chaque création NOTTALYS s’adapte à votre histoire.
-    </div>
+        <!-- Mini Audio Player -->
+        <div class="container">
+            <div class="mini-player">
+                <button class="play-btn" id="playBtn">
+                    <span id="playIcon">▶</span>
+                </button>
+                <div class="track-info">
+                    <div class="track-title">L'Horizon Partagé</div>
+                    <div class="track-artist">Emma & Lucas</div>
+                    <div class="progress-mini" id="progressMini">
+                        <div class="progress-mini-fill" id="progressMiniFill"></div>
+                    </div>
+                </div>
+                <audio id="audioElement" preload="metadata">
+                    <source src="../media/audio/examples/L-Horizon-Partage.mp3" type="audio/mpeg">
+                </audio>
+            </div>
         </div>
 
+   
 
+        <section class="content-section container">
+            <div class="content-grid">
+                <div>
+                    <div class="section-number">01</div>
+                    <h2>Le contexte</h2>
+                </div>
 
-
-
-        
-
-
-         <!-- Formulaire de contact -->
-        <section class="form-section section scroll-animate" id="commencer">
-            
-            <div class="form-container">
-            
-                 <form id="contactForm" action="https://formsubmit.co/rastien@gmail.com" method="POST">
-                    <div class="form-header">
-                        <h2>Racontez-nous votre histoire</h2>
-                        <p class="microcopy">Quelques mots suffisent pour commencer. Nous vous répondrons personnellement.</p>
-                    
-                        <a href="index.html#commencer" class="btn btn-primary" aria-label="Créer notre chanson de mariage">   Commencer notre chanson ↗</a>
-
+                <div class="content-details">                    
+                    <div class="detail-item">
+                        <span class="detail-label">Prénoms</span>
+                        <span class="detail-value">Emma & Lucas</span>
                     </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Type de mariage</span>
+                        <span class="detail-value">Mariage Champêtre</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Moment clé</span>
+                        <span class="detail-value">Entrée dans </span>
+                    </div>
+                    <p class="detail-text">Emma & Lucas souhaitaient une première danse intime, à leur image, loin des chansons entendues partout. Ils voulaient un moment suspendu, rien qu'à eux.</p>
+                </div>
+            </div>
 
-                    
-                </form>
+            <div class="content-grid">
+                <div>
+                    <div class="section-number">02 </div>
+                    <h2>Direction Musicale</h2>
+                </div>
+
+                <div class="content-details">                
+                    <div class="detail-item">
+                        <span class="detail-label">Style</span>
+                        <span class="detail-value">Émotionnel / acoustique</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Ambiance</span>
+                        <span class="detail-value">Intime et poétique</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Voix</span>
+                        <span class="detail-value">Masculine</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Tempo</span>
+                        <span class="detail-value">Lent, ballade</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-grid">
+                <div>
+                    <div class="section-number">03</div>
+                    <h2>Ce que nous personnalisons</h2>
+                </div>
+                    <div class="content-details">
+                        <div class="detail-text">
+                            <ul>
+                                <li>Leurs prénoms intégrés dans les paroles</li>
+                                <li>Le lieu de leur rencontre</li>
+                                <li>La date de leur mariage</li>
+                                <li>Des détails de leur mariage (le parfum du café, la pluie sur les vitres)</li>
+                                <li>L'ambiance émotionnelle de leur histoire</li>
+                                <li>Leurs promesses mutuelles</li>
+                            </ul>
+                        </div>
+                </div>
+
             </div>
         </section>
 
+        <section class="image-section">
+            <div class="image-content">
+                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'><rect fill='%23f5e6d3' width='400' height='400'/><ellipse cx='200' cy='200' rx='80' ry='100' fill='%23d4a574' opacity='0.3'/></svg>" alt="Couple de mariés">
+                <div>
+                    <h2>Pourquoi cette chanson est unique</h2>
+                    <p>Cette chanson est unique car elle n'existe que pour Emma & Lucas. Les paroles racontent leur histoire — leur rencontre fortuite, leurs premiers doutes, leur évidence.</p>
+                    <p>La mélodie a été composée pour correspondre à leur sensibilité, créant un moment de pure émotion sur la piste de danse.</p>
+                    <div class="highlight-text">
+                        <p><em>"Chaque création NOTTALYS s'adapte à votre histoire. Cet exemple illustre une direction possible."</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-
-
-
-
+        <section class="form-section section scroll-animate" id="commencer">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Prêts à créer<br>la musique de votre union ?</h2>
+                    <p class="microcopy">Votre histoire mérite une mélodie. Commencez l'aventure aujourd'hui.</p>
+                    <a href="../index.html#commencer" class="btn btn-primary" aria-label="Créer notre chanson de mariage">Commencer notre chanson ↗</a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -196,188 +442,73 @@ Chaque création NOTTALYS s’adapte à votre histoire.
         </ul>
         <div class="footer-bottom">
             <div class="footer-left">
-                <img src="/media/images/logo-icon-nottalys.svg" alt="Nottalys logo" width="50" height="50">
+                <img src="../media/images/logo-icon-nottalys.svg" alt="Nottalys logo" width="50" height="50">
                 <span class="footer-copyright">© Nottalys 2026</span>
             </div>
             <div class="footer-right">
                 All Rights Reserved
             </div>
         </div>
-
     </footer>
 
-    <script src="../script/nottalys.js"></script>
     <script>
+        // Mini Audio Player
+        const audio = document.getElementById('audioElement');
+        const playBtn = document.getElementById('playBtn');
+        const playIcon = document.getElementById('playIcon');
+        const progressMini = document.getElementById('progressMini');
+        const progressMiniFill = document.getElementById('progressMiniFill');
 
-        // ============================================
-        // SEE MORE
-        // ============================================
-        
-        document.addEventListener('DOMContentLoaded', () => {
-          if (window.innerWidth > 768) return;
-
-          const featureText = document.querySelector('#pourquoi .feature-text');
-          if (!featureText) return;
-
-          const paragraphs = featureText.querySelectorAll('p');
-
-          let insertAfterParagraph = null;
-
-          paragraphs.forEach(p => {
-            if (p.textContent.includes('plus importants de votre vie')) {
-              insertAfterParagraph = p;
+        // Play/Pause
+        playBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                playIcon.textContent = '⏸';
+                playBtn.classList.add('playing');
+            } else {
+                audio.pause();
+                playIcon.textContent = '▶';
+                playBtn.classList.remove('playing');
             }
-          });
-
-          if (!insertAfterParagraph) return;
-
-          featureText.classList.add('is-collapsed');
-
-          const seeMore = document.createElement('span');
-          seeMore.className = 'see-more';
-          seeMore.textContent = 'Voir plus';
-
-          seeMore.addEventListener('click', () => {
-            featureText.classList.remove('is-collapsed');
-            seeMore.remove();
-          });
-
-          insertAfterParagraph.after(seeMore);
         });
 
+        // Update progress
+        audio.addEventListener('timeupdate', () => {
+            const progress = (audio.currentTime / audio.duration) * 100;
+            progressMiniFill.style.width = progress + '%';
+        });
 
-// ============================================
-// STEPS
-// ============================================
+        // Click on progress bar
+        progressMini.addEventListener('click', (e) => {
+            const rect = progressMini.getBoundingClientRect();
+            const percent = (e.clientX - rect.left) / rect.width;
+            audio.currentTime = percent * audio.duration;
+        });
 
-document.addEventListener('DOMContentLoaded', () => {
-  if (window.innerWidth > 768) return;
+        // Reset when ended
+        audio.addEventListener('ended', () => {
+            playIcon.textContent = '▶';
+            playBtn.classList.remove('playing');
+            progressMiniFill.style.width = '0%';
+        });
 
-  const steps = document.querySelector('.steps');
-  if (!steps) return;
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
 
-  const wrapper = steps.parentElement;
-  wrapper.classList.add('steps-wrapper');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
 
-  const updateGradients = () => {
-    const scrollLeft = steps.scrollLeft;
-    const maxScroll = steps.scrollWidth - steps.clientWidth;
-
-    // gauche
-    if (scrollLeft > 10) {
-      wrapper.classList.add('has-left-gradient');
-    } else {
-      wrapper.classList.remove('has-left-gradient');
-    }
-
-    // droite
-    if (scrollLeft < maxScroll - 10) {
-      wrapper.classList.add('has-right-gradient');
-    } else {
-      wrapper.classList.remove('has-right-gradient');
-    }
-  };
-
-  // init
-  updateGradients();
-
-  // on scroll
-  steps.addEventListener('scroll', updateGradients);
-});
-
-   
-
-
-// ============================================
-// FORM
-// ============================================
-const form = {
-  names: document.getElementById('names'),
-  email: document.getElementById('email'),
-  message: document.getElementById('message')
-};
-
-const errors = {
-  names: document.getElementById('names-error'),
-  email: document.getElementById('email-error'),
-  message: document.getElementById('message-error')
-};
-
-const submitBtn = document.getElementById('submitBtn');
-const formCard = document.getElementById('formCard');
-const successMessage = document.getElementById('successMessage');
-
-/* Nettoyage des erreurs */
-function clearError(field) {
-  form[field].classList.remove('error');
-  errors[field].textContent = '';
-}
-
-Object.keys(form).forEach(field => {
-  form[field].addEventListener('input', () => clearError(field));
-});
-
-/* Validation */
-function validateForm() {
-  let valid = true;
-
-  if (form.names.value.trim().length < 3) {
-    errors.names.textContent = 'Veuillez entrer au moins 3 caractères';
-    form.names.classList.add('error');
-    valid = false;
-  }
-
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(form.email.value.trim())) {
-    errors.email.textContent = 'Adresse email invalide';
-    form.email.classList.add('error');
-    valid = false;
-  }
-
-  if (form.message.value.trim().length < 50) {
-    errors.message.textContent = 'Veuillez écrire au moins 50 caractères';
-    form.message.classList.add('error');
-    valid = false;
-  }
-
-  return valid;
-}
-
-/* Soumission */
-const contactForm = document.getElementById('contactForm');
-
-contactForm.addEventListener('submit', function (e) {
-  e.preventDefault();
-
-  if (!validateForm()) return;
-
-  const formData = new FormData(contactForm);
-
-  fetch(contactForm.action, {
-    method: 'POST',
-    body: formData,
-    headers: {
-      'Accept': 'application/json'
-    }
-  })
-  .then(response => {
-    if (response.ok) {
-      formCard.style.display = 'none';
-      successMessage.classList.add('active');
-      successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      contactForm.reset();
-    } else {
-      alert("Une erreur est survenue. Merci de réessayer.");
-    }
-  })
-  .catch(() => {
-    alert("Erreur de connexion.");
-  });
-});
-</script>
-
-
-
-
+        document.querySelectorAll('.scroll-animate').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
