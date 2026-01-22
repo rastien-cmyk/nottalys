@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ metaTitle }}</title>
+    <meta name="description" content="{{ metaDesc }}">
+
+    <meta property="og:title" content="{{ metaTitle }}" />
+    <meta property="og:description" content="{{ metaDesc }}" />
+    <meta property="og:type" content="website" />    
+    <meta property="og:image" content="https://nottalys.com/media/images/chanson-mariage-personnalisee-ia-nottalys.png" />
+    <meta property="og:url" content="https://nottalys.com{{ page.url }}" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prata&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="icon" type="image/svg+xml" href="/media/favicon.svg">
+    <link rel="stylesheet" type="text/css" href="/css/output.css">
+    <link rel="canonical" href="https://nottalys.com{{ page.url }}" />
+
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NMZDW75R');</script>
+</head>
+
+<body class="antialiased bg-white text-gray-900">
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMZDW75R"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <!-- Back Header -->
+    <div class="sticky top-0 left-0 right-0 bg-white/70 backdrop-blur-xl px-6 py-4 z-50 shadow-sm">
+        <div class="max-w-[1200px] mx-auto flex items-center justify-between">
+            <a href="/exemples/" class="back-link">
+                <span class="text-2xl leading-none">←</span>
+                <span class="hidden md:inline">TOUS LES EXEMPLES</span>
+            </a>
+            
+            <div class="absolute left-1/2 transform -translate-x-1/2">
+                <a href="/">
+                    <img src="/media/images/logo-nottalys.svg" alt="Nottalys logo" width="175" height="43" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-overlay text-center py-20 md:py-32 px-6" style="background-image: url(/media/images/hero.webp);">
+            <div class="container-nottalys">
+                <h1 class="mb-4">{{ title }}</h1>
+                <p class="text-xl md:text-2xl font-serif italic text-gray-700 mb-6">{{ subtitle }}</p>
+                <p class="text-sm md:text-base text-gray-600 max-w-3xl mx-auto font-sans">
+                    Une chanson créée pour accompagner l'entrée de {{ prenoms }} lors de leur cérémonie.<br/>
+                    Une musique qui installe l'émotion, le silence et l'attente.
+                </p>
+            </div>
+        </section>
+
+        <!-- Mini Audio Player -->
+        <div class="container-nottalys -mt-8 mb-16 relative z-10">
+            <div 
+                x-data="miniPlayer()"
+                class="max-w-[500px] mx-auto bg-white rounded-[10px] shadow-xl p-6 flex items-center gap-4"
+            >
+                <button 
+                    @click="togglePlay()"
+                    class="play-button w-12 h-12 md:w-14 md:h-14"
+                    aria-label="Play/Pause"
+                >
+                    <span x-show="!isPlaying">▶</span>
+                    <span x-show="isPlaying">⏸</span>
+                </button>
+                
+                <div class="flex-1">
+                    <div class="font-serif text-base md:text-lg mb-1">{{ subtitle }}</div>
+                    <div class="text-xs md:text-sm text-gray-500 font-sans">{{ prenoms }}</div>
+                    
+                    <!-- Progress bar -->
+                    <div 
+                        @click="seek($event)"
+                        class="w-full h-1 bg-gray-200 rounded-full cursor-pointer mt-2"
+                    >
+                        <div 
+                            class="h-full bg-nottalys-purple rounded-full transition-all duration-100"
+                            :style="`width: ${progress}%`"
+                        ></div>
+                    </div>
+                </div>
+                
+                <audio 
+                    x-ref="audio"
+                    @timeupdate="updateProgress()"
+                    @loadedmetadata="updateDuration()"
+                    @ended="handleEnded()"
+                    preload="metadata"
+                >
+                    <source src="/media/audio/examples/L-Horizon-Partage.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <!-- Content Sections -->
+        <section class="py-12 md:py-16 px-6">
+            <div class="container-nottalys max-w-5xl">
+                
+                <!-- Section 01 - Contexte -->
+                <div class="grid md:grid-cols-[120px_1fr] gap-8 md:gap-12 mb-16 pb-16 border-b border-gray-200">
+                    <div>
+                        <div class="step-number mb-4">01</div>
+                        <h2 class="text-2xl md:text-3xl">Le contexte</h2>
+                    </div>
+                    
+                    <div>
+                        <p class="text-sm md:text-base text-gray-600 font-sans leading-relaxed mb-4">
+                            {{ prenoms }} ont choisi une entrée de cérémonie à Talloires, dans un village au bord du lac, 
+                            entourés de leurs proches. Ils souhaitaient une chanson qui ne surjoue rien, mais qui dise 
+                            l'essentiel : leur chemin commun, les détails qui les définissent, et ce moment précis où tout commence.
+                        </p>
+                        <p class="text-sm md:text-base text-gray-600 font-sans leading-relaxed">
+                            La musique accompagne leurs pas, sans les précéder, sans les couvrir.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Section 02 - Direction Musicale -->
+                <div class="grid md:grid-cols-[120px_1fr] gap-8 md:gap-12 mb-16 pb-16 border-b border-gray-200">
+                    <div>
+                        <div class="step-number mb-4">02</div>
+                        <h2 class="text-2xl md:text-3xl">Direction<br>Musicale</h2>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <span class="text-xs uppercase tracking-wide text-gray-500 font-sans block mb-1">Style</span>
+                            <span class="text-sm md:text-base text-gray-900 font-sans">Émotionnel / épuré</span>
+                        </div>
+                        
+                        <div>
+                            <span class="text-xs uppercase tracking-wide text-gray-500 font-sans block mb-1">Voix</span>
+                            <span class="text-sm md:text-base text-gray-900 font-sans">Masculine moderne</span>
+                        </div>
+                        
+                        <div>
+                            <span class="text-xs uppercase tracking-wide text-gray-500 font-sans block mb-1">Tempo</span>
+                            <span class="text-sm md:text-base text-gray-900 font-sans">Lent, progressif</span>
+                        </div>
+                        
+                        <p class="text-sm md:text-base text-gray-600 font-sans leading-relaxed">
+                            Une composition pensée comme un mouvement continu, laissant respirer les silences et l'émotion. 
+                            La voix raconte, sans emphase, pour laisser toute la place au moment.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Section 03 - Personnalisation -->
+                <div class="grid md:grid-cols-[120px_1fr] gap-8 md:gap-12 mb-16">
+                    <div>
+                        <div class="step-number mb-4">03</div>
+                        <h2 class="text-2xl md:text-3xl">Ce que nous personnalisons</h2>
+                    </div>
+                    
+                    <div>
+                        <ul class="space-y-3 text-sm md:text-base text-gray-600 font-sans">
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-nottalys-purple flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Les prénoms : {{ prenoms }}</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-nottalys-purple flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Le lieu : Talloires</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-nottalys-purple flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Le décor naturel et l'atmosphère du moment</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-nottalys-purple flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>La date du mariage (jour et mois)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-nottalys-purple flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Les détails de leur histoire intégrés dans les paroles</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- Image Section -->
+        <section class="py-16 md:py-24 px-6 bg-nottalys-bg-alt">
+            <div class="container-nottalys">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <img 
+                        src="/media/images/temoignage.webp" 
+                        alt="Couple de mariés" 
+                        class="w-full h-[300px] md:h-[400px] object-cover rounded-[10px]"
+                    >
+                    
+                    <div>
+                        <h2 class="text-2xl md:text-4xl mb-6">Pourquoi cette chanson est unique</h2>
+                        <p class="text-sm md:text-base text-gray-600 font-sans leading-relaxed mb-4">
+                            Cette chanson est unique car elle n'existe que pour {{ prenoms }}. Les paroles racontent 
+                            leur histoire – leur rencontre fortuite, leurs premiers doutes, leur évidence.
+                        </p>
+                        <p class="text-sm md:text-base text-gray-600 font-sans leading-relaxed mb-6">
+                            La mélodie a été composée pour correspondre à leur sensibilité, créant un moment de pure 
+                            émotion sur la piste de danse.
+                        </p>
+                        
+                        <div class="bg-white p-6 rounded-[10px] border-l-4 border-nottalys-purple">
+                            <p class="text-sm md:text-base italic text-gray-700 font-sans">
+                                "Chaque création NOTTALYS s'adapte à votre histoire. Cet exemple illustre une direction possible."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <section class="py-16 md:py-24 px-6 section-animate">
+            <div class="max-w-[600px] mx-auto text-center">
+                <h2 class="mb-6">Prêts à créer<br>la musique de votre union ?</h2>
+                <p class="text-sm md:text-base text-gray-600 mb-8 font-sans">
+                    Votre histoire mérite une mélodie. Commencez l'aventure aujourd'hui.
+                </p>
+                <a href="/index.html#commencer" class="btn btn-primary">
+                    Commencer notre chanson ↗
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    {% include "footer.njk" %}
+
+    <!-- Scroll animations -->
+    <script src="/js/animations.js"></script>
+
+    <script>
+    // Mini Audio Player Alpine component
+    function miniPlayer() {
+      return {
+        isPlaying: false,
+        currentTime: 0,
+        duration: 0,
+        progress: 0,
+        
+        togglePlay() {
+          const audio = this.$refs.audio;
+          if (this.isPlaying) {
+            audio.pause();
+            this.isPlaying = false;
+          } else {
+            audio.play();
+            this.isPlaying = true;
+          }
+        },
+        
+        updateProgress() {
+          const audio = this.$refs.audio;
+          this.currentTime = audio.currentTime;
+          this.duration = audio.duration || 0;
+          this.progress = (this.currentTime / this.duration) * 100 || 0;
+        },
+        
+        updateDuration() {
+          this.duration = this.$refs.audio.duration || 0;
+        },
+        
+        seek(event) {
+          const rect = event.currentTarget.getBoundingClientRect();
+          const percent = (event.clientX - rect.left) / rect.width;
+          this.$refs.audio.currentTime = percent * this.duration;
+        },
+        
+        handleEnded() {
+          this.isPlaying = false;
+          this.progress = 0;
+        }
+      };
+    }
+    </script>
+</body>
+</html>

@@ -9,7 +9,6 @@
     <meta property="og:title" content="Nottalys | Votre chanson de mariage unique et sur mesure" />
     <meta property="og:description" content="Sublimez votre union avec une chanson créée sur mesure. Nottalys utilise l'intelligence artificielle pour transformer votre histoire en une composition musicale unique et émouvante." />
     <meta property="og:type" content="website" />    
-    
     <meta property="og:image" content="https://nottalys.com/media/images/chanson-mariage-personnalisee-ia-nottalys.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -17,7 +16,7 @@
     <meta property="og:url" content="https://nottalys.com{{ page.url }}" />
 
     <link rel="preload" as="image" href="/media/images/hero.webp">
-
+    <link rel="canonical" href="https://nottalys.com{{ page.url }}" />
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -27,7 +26,6 @@
     })(window,document,'script','dataLayer','GTM-NMZDW75R');</script>
     <!-- End Google Tag Manager -->
 
-
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,28 +33,30 @@
     
     <link rel="icon" type="image/svg+xml" href="/media/favicon.svg">
 
-    <link rel="stylesheet" type="text/css" href="/css/styles.css">
-    <link rel="canonical" href="https://nottalys.com{{ page.url }}" />
+    <!-- Tailwind CSS compilé -->
+    <link rel="stylesheet" type="text/css" href="/css/output.css">
 
-    {% if pageCss %}
-    <link rel="stylesheet" href="{{ pageCss }}">
-    {% endif %}
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     {% if pageStyle %}
     <style>
     {{ pageStyle | safe }}
     </style>
     {% endif %}
-    
-
 </head>
-<body>
+
+<body class="antialiased bg-white text-gray-900">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMZDW75R"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
+    {{ content | safe }}
 
-{{ content | safe }}
+    {% include "footer.njk" %}
 
-{% include "footer.njk" %}
+    <!-- Scroll animations -->
+    <script src="/js/animations.js"></script>
+</body>
+</html>

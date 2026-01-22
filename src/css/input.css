@@ -1,0 +1,244 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   NOTTALYS - Custom Styles
+   ============================================ */
+
+@layer base {
+  body {
+    @apply font-serif text-gray-900;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-normal;
+  }
+  
+  h1 {
+    @apply text-5xl md:text-7xl leading-tight;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-5xl leading-tight;
+  }
+  
+  h3 {
+    @apply text-lg md:text-xl font-medium;
+  }
+  
+  p {
+    @apply font-sans text-sm md:text-base leading-loose;
+  }
+}
+
+@layer components {
+  /* Container personnalisé */
+  .container-nottalys {
+    @apply max-w-[1200px] mx-auto px-6;
+  }
+  
+  /* Boutons */
+  .btn {
+    @apply inline-flex items-center justify-center px-8 py-3 rounded-[30px] 
+           text-sm font-sans font-medium transition-all duration-300
+           focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply bg-nottalys-purple text-white hover:bg-nottalys-purple-dark 
+           hover:-translate-y-0.5 hover:shadow-nottalys
+           focus:ring-nottalys-purple;
+  }
+  
+  .btn-secondary {
+    @apply bg-nottalys-beige text-gray-900 hover:bg-nottalys-beige-dark
+           hover:-translate-y-0.5 hover:shadow-nottalys
+           focus:ring-nottalys-beige;
+  }
+  
+  /* Navigation glassmorphism */
+  .nav-glass {
+    @apply bg-white/70 backdrop-blur-xl rounded-[50px] px-8 py-3
+           border border-white/20 shadow-sm;
+  }
+  
+  /* Hero avec overlay */
+  .hero-overlay {
+    @apply relative bg-cover bg-center;
+  }
+  
+  .hero-overlay::before {
+    @apply content-[''] absolute inset-0 bg-white/80;
+  }
+  
+  .hero-overlay > * {
+    @apply relative z-10;
+  }
+  
+  /* Section avec scroll reveal */
+  .section-animate {
+    @apply opacity-0 translate-y-8 transition-all duration-700;
+  }
+  
+  .section-animate.visible {
+    @apply opacity-100 translate-y-0;
+  }
+  
+  /* Audio Player */
+  .audio-player-card {
+    @apply bg-white rounded-[10px] p-4 shadow-md 
+           hover:shadow-lg transition-shadow duration-300;
+  }
+  
+  .play-button {
+    @apply w-14 h-14 md:w-16 md:h-16 bg-nottalys-purple rounded-full
+           flex items-center justify-center text-white text-xl
+           hover:bg-nottalys-purple-dark hover:scale-105
+           transition-all duration-300 cursor-pointer;
+  }
+  
+  .play-button.playing {
+    @apply bg-nottalys-purple-dark;
+  }
+  
+  /* Form Inputs */
+  .form-input-nottalys {
+    @apply w-full px-4 py-3 rounded-[10px] border border-gray-300
+           font-sans text-sm bg-white
+           focus:outline-none focus:border-nottalys-purple focus:ring-1 focus:ring-nottalys-purple
+           transition-all duration-200;
+  }
+  
+  .form-input-nottalys.error {
+    @apply border-red-500 bg-red-50;
+  }
+  
+  /* Playlist item */
+  .playlist-item {
+    @apply bg-white rounded-[10px] p-4 cursor-pointer
+           border-2 border-transparent
+           hover:bg-nottalys-purple/5 hover:border-nottalys-purple
+           transition-all duration-300;
+  }
+  
+  .playlist-item.active {
+    @apply bg-nottalys-purple/10 border-nottalys-purple;
+  }
+  
+  /* Step number */
+  .step-number {
+    @apply text-6xl md:text-[64px] font-light text-gray-200 leading-none;
+  }
+  
+  /* Back link */
+  .back-link {
+    @apply flex items-center gap-2 text-gray-900 font-sans text-sm
+           hover:opacity-70 transition-opacity;
+  }
+}
+
+@layer utilities {
+  /* Animations au scroll */
+  .animate-on-scroll {
+    @apply opacity-0 translate-y-8 transition-all duration-700;
+  }
+  
+  .animate-on-scroll.visible {
+    @apply opacity-100 translate-y-0;
+  }
+  
+  /* Hero animations */
+  .animate-fade-in-up {
+    animation: fadeInUp 1s ease-out both;
+  }
+  
+  .animate-fade-in-up-delay-1 {
+    animation: fadeInUp 1s ease-out 0.2s both;
+  }
+  
+  .animate-fade-in-up-delay-2 {
+    animation: fadeInUp 1s ease-out 0.4s both;
+  }
+  
+  .animate-fade-in-up-delay-3 {
+    animation: fadeInUp 1s ease-out 0.6s both;
+  }
+  
+  /* Gradient fade pour scroll horizontal */
+  .scroll-gradient-left {
+    @apply relative;
+  }
+  
+  .scroll-gradient-left::before {
+    @apply content-[''] absolute left-0 top-0 h-full w-20 
+           pointer-events-none opacity-0 transition-opacity duration-300
+           bg-gradient-to-r from-white to-transparent;
+  }
+  
+  .scroll-gradient-left.has-left-gradient::before {
+    @apply opacity-100;
+  }
+  
+  .scroll-gradient-right {
+    @apply relative;
+  }
+  
+  .scroll-gradient-right::after {
+    @apply content-[''] absolute right-0 top-0 h-full w-20 
+           pointer-events-none opacity-0 transition-opacity duration-300
+           bg-gradient-to-l from-white to-transparent;
+  }
+  
+  .scroll-gradient-right.has-right-gradient::after {
+    @apply opacity-100;
+  }
+}
+
+/* ============================================
+   Animations Keyframes
+   ============================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   Mobile Specific
+   ============================================ */
+@media (max-width: 768px) {
+  /* Scroll horizontal pour steps */
+  .steps-scroll-mobile {
+    @apply flex gap-6 overflow-x-auto snap-x snap-mandatory
+           scrollbar-hide pl-6 pr-24;
+  }
+  
+  .steps-scroll-mobile > * {
+    @apply flex-none w-[280px] snap-start;
+  }
+  
+  /* Hide scrollbar */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

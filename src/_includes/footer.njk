@@ -1,20 +1,23 @@
-<footer>
-        <ul class="footer-links">
-            <li><a href="/exemples">Exemples de chansons</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#contact">À propos de Nottalys</a></li>
-            <li><a href="#contact">Contactez-nous</a></li>
-        </ul>
-        <div class="footer-bottom">
-            <div class="footer-left">
-                <img src="/media/images/logo-icon-nottalys.svg" alt="Nottalys logo" width="50" height="50">
-                <span class="footer-copyright">© Nottalys 2026</span>
-            </div>
-            <div class="footer-right">
-                All Rights Reserved
-            </div>
+<footer class="py-12 md:py-16 px-6 bg-white border-t border-gray-200">
+    <!-- Links -->
+    <ul class="flex flex-wrap justify-center gap-6 md:gap-8 mb-12 font-sans text-xs md:text-sm">
+        <li><a href="/exemples" class="text-gray-600 hover:text-gray-900 transition-colors">Exemples de chansons</a></li>
+        <li><a href="#faq" class="text-gray-600 hover:text-gray-900 transition-colors">FAQ</a></li>
+        <li><a href="#contact" class="text-gray-600 hover:text-gray-900 transition-colors">À propos de Nottalys</a></li>
+        <li><a href="#contact" class="text-gray-600 hover:text-gray-900 transition-colors">Contactez-nous</a></li>
+    </ul>
+    
+    <!-- Bottom -->
+    <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0 pt-8 border-t border-gray-200">
+        <!-- Left -->
+        <div class="flex items-center gap-4">
+            <img src="/media/images/logo-icon-nottalys.svg" alt="Nottalys logo" width="50" height="50" class="flex-shrink-0">
+            <span class="text-xs md:text-sm text-gray-500 font-sans whitespace-nowrap">© Nottalys 2026</span>
         </div>
-
-    </footer>
-
-<script src="/script/nottalys.js"></script>
+        
+        <!-- Right -->
+        <div class="text-xs md:text-sm text-gray-500 font-sans text-center md:text-right">
+            All Rights Reserved
+        </div>
+    </div>
+</footer>
