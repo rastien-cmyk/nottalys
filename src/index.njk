@@ -119,128 +119,145 @@ metaDesc: Transformez votre histoire d'amour en musique. NOTTALYS crée des chan
                     >
                 </div>
 
-                <!-- Contenu -->
-                <div class="space-y-8 font-sans">
+                <!-- Contenu avec "Voir plus" sur mobile -->
+                <div 
+                    x-data="{ expanded: false }"
+                    class="space-y-8 font-sans"
+                >
                     <div>
                         <h2 class="mb-6 leading-tight">Une musique de mariage vraiment personnalisée</h2>
+                        
+                        <!-- Paragraphes toujours visibles (≈ 300 caractères) -->
                         <p class="text-gray-600 mb-4">
                             Chaque histoire d'amour possède son propre rythme, ses émotions, ses instants fondateurs. 
                             Chez NOTTALYS, nous créons des chansons de mariage personnalisées à partir de votre récit, 
                             de votre rencontre, de vos souvenirs et de ce qui fait la singularité de votre union.
                         </p>
-                        <p class="text-gray-600">
+                        <p class="text-gray-600" :class="{ 'mb-4': expanded || window.innerWidth >= 768 }">
                             Contrairement aux musiques génériques, votre chanson est composée exclusivement pour vous. 
-                            Elle ne sera jamais réutilisée, ni adaptée à un autre couple. C'est une œuvre unique, 
-                            pensée pour refléter votre lien et accompagner l'un des moments les plus importants de votre vie.
+                            Elle ne sera jamais réutilisée, ni adaptée à un autre couple.
                         </p>
+                        
+                        <!-- Contenu caché sur mobile jusqu'au clic "Voir plus" -->
+                        <div 
+                            x-show="expanded || window.innerWidth >= 768"
+                            x-transition:enter="transition ease-out duration-300"
+                            x-transition:enter-start="opacity-0 -translate-y-2"
+                            x-transition:enter-end="opacity-100 translate-y-0"
+                            class="space-y-4"
+                        >
+                            <p class="text-gray-600">
+                                C'est une œuvre unique, pensée pour refléter votre lien et accompagner l'un des moments 
+                                les plus importants de votre vie.
+                            </p>
+                        </div>
+                        
+                        <!-- Bouton "Voir plus" (mobile uniquement) -->
+                        <button
+                            @click="expanded = !expanded"
+                            class="md:hidden mt-3 text-nottalys-purple text-sm font-medium hover:underline focus:outline-none"
+                            x-show="!expanded"
+                        >
+                            Voir plus
+                        </button>
                     </div>
                     
-                    <div>
-                        <h3 class="text-xl md:text-2xl mb-4 font-serif">Un souvenir musical pour votre union</h3>
-                        <p class="text-gray-600 mb-4">
-                            Votre musique NOTTALYS n'est pas seulement destinée au jour du mariage. 
-                            Elle devient un souvenir musical intemporel, à écouter, à partager, et à réécouter au fil des années.
-                        </p>
-                        <p class="text-gray-600">
-                            Première danse, cérémonie, moment intime ou simple écoute à deux : votre chanson s'inscrit 
-                            dans le temps et garde intacte l'émotion de votre union.
-                        </p>
-                    </div>
-                    
-                    <div>
-                        <h3 class="text-xl md:text-2xl mb-4 font-serif">Comment naît votre chanson NOTTALYS</h3>
-                        <p class="text-gray-600 mb-4">
-                            Tout commence par votre histoire. À travers quelques questions, vous partagez les moments clés 
-                            de votre relation, vos émotions, vos inspirations et l'univers musical qui vous ressemble.
-                        </p>
-                        <p class="text-gray-600 mb-4">
-                            À partir de ces éléments, nous composons une musique de mariage sur mesure, guidée par la sensibilité 
-                            artistique et soutenue par l'intelligence artificielle, pour capturer l'essence de votre couple.
-                        </p>
-                        <p class="text-gray-600">
-                            Le résultat : une chanson sincère, élégante et profondément personnelle – la bande-son de votre union.
-                        </p>
+                    <!-- Sections suivantes : cachées sur mobile si non expanded -->
+                    <div 
+                        x-show="expanded || window.innerWidth >= 768"
+                        x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="opacity-0 -translate-y-2"
+                        x-transition:enter-end="opacity-100 translate-y-0"
+                        class="space-y-8"
+                    >
+                        <div>
+                            <h3 class="text-xl md:text-2xl mb-4 font-serif">Un souvenir musical pour votre union</h3>
+                            <p class="text-gray-600 mb-4">
+                                Votre musique NOTTALYS n'est pas seulement destinée au jour du mariage. 
+                                Elle devient un souvenir musical intemporel, à écouter, à partager, et à réécouter au fil des années.
+                            </p>
+                            <p class="text-gray-600">
+                                Première danse, cérémonie, moment intime ou simple écoute à deux : votre chanson s'inscrit 
+                                dans le temps et garde intacte l'émotion de votre union.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl md:text-2xl mb-4 font-serif">Comment naît votre chanson NOTTALYS</h3>
+                            <p class="text-gray-600 mb-4">
+                                Tout commence par votre histoire. À travers quelques questions, vous partagez les moments clés 
+                                de votre relation, vos émotions, vos inspirations et l'univers musical qui vous ressemble.
+                            </p>
+                            <p class="text-gray-600 mb-4">
+                                À partir de ces éléments, nous composons une musique de mariage sur mesure, guidée par la sensibilité 
+                                artistique et soutenue par l'intelligence artificielle, pour capturer l'essence de votre couple.
+                            </p>
+                            <p class="text-gray-600">
+                                Le résultat : une chanson sincère, élégante et profondément personnelle – la bande-son de votre union.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+
     <!-- Steps Section -->
+
     <section id="process" class="py-16 md:py-24 px-6 section-animate">
-        <div class="container-nottalys">
-            <h2 class="text-center mb-16">Trois étapes vers votre chanson</h2>
-            
-            <!-- Grid desktop / Scroll horizontal mobile -->
-            <div class="hidden md:grid md:grid-cols-3 gap-16">
-                <div class="text-left">
-                    <div class="step-number mb-6">01</div>
-                    <h3 class="mb-3">Vous nous racontez votre histoire</h3>
-                    <p class="text-xs md:text-sm text-gray-500">
-                        Quelques mots suffisent. Un souvenir, une émotion, une ambiance, une intention… 
-                        Vous nous partagez ce qui compte pour vous, sans contrainte ni vocabulaire technique.
-                    </p>
-                </div>
-                
-                <div class="text-left">
-                    <div class="step-number mb-6">02</div>
-                    <h3 class="mb-3">Une première création prend forme</h3>
-                    <p class="text-xs md:text-sm text-gray-500">
-                        À partir de votre récit, nous utilisons des outils de création musicale assistée par intelligence 
-                        artificielle pour donner naissance à une première base sur-mesure. L'IA nous permet d'explorer 
-                        rapidement différentes ambiances et de rester au plus proche de votre histoire.
-                    </p>
-                </div>
-                
-                <div class="text-left">
-                    <div class="step-number mb-6">03</div>
-                    <h3 class="mb-3">La musique évolue avec vous</h3>
-                    <p class="text-xs md:text-sm text-gray-500">
-                        Rythme, émotion, intensité, atmosphère… Chaque détail est ajusté jusqu'à ce que 
-                        la musique vous ressemble vraiment.
-                    </p>
-                </div>
+      <div class="container-nottalys">
+        <h2 class="text-center mb-16">Trois étapes vers votre chanson</h2>
+
+        <div x-data="stepsScroll()" x-init="init()" class="relative">
+          
+          <!-- Gradient gauche (mobile only) -->
+          <div x-show="hasLeft"
+               class="md:hidden fixed left-0 top-0 h-full w-8 pointer-events-none z-10
+                      bg-gradient-to-r from-white via-white/80 to-transparent
+                      transition-opacity duration-300"
+               :class="{ 'opacity-0': !hasLeft, 'opacity-100': hasLeft }">
+          </div>
+
+          <!-- Gradient droite (mobile only) -->
+          <div x-show="hasRight"
+               class="md:hidden fixed right-0 top-0 h-full w-8 pointer-events-none z-10
+                      bg-gradient-to-l from-white via-white/80 to-transparent
+                      transition-opacity duration-300"
+               :class="{ 'opacity-0': !hasRight, 'opacity-100': hasRight }">
+          </div>
+
+          <div x-ref="container" @scroll.passive="updateGradients()" class="steps-scroll">
+
+            <div class="text-left step-card">
+              <div class="step-number mb-6">01</div>
+              <h3 class="mb-3">Vous nous racontez votre histoire</h3>
+              <p class="text-xs md:text-sm text-gray-500">
+                Quelques mots suffisent. Un souvenir, une émotion, une ambiance, une intention…
+                Vous nous partagez ce qui compte pour vous, sans contrainte ni vocabulaire technique.
+              </p>
             </div>
 
-            <!-- Mobile: scroll horizontal -->
-            <div 
-                x-data="stepsScroll()" 
-                x-init="init()" 
-                class="md:hidden relative"
-                :class="{ 'scroll-gradient-left has-left-gradient': hasLeft, 'scroll-gradient-right has-right-gradient': hasRight }"
-            >
-                <div 
-                    x-ref="container"
-                    @scroll="updateGradients()"
-                    class="steps-scroll-mobile"
-                >
-                    <div class="text-left">
-                        <div class="step-number mb-6">01</div>
-                        <h3 class="mb-3">Vous nous racontez votre histoire</h3>
-                        <p class="text-xs text-gray-500">
-                            Quelques mots suffisent. Un souvenir, une émotion, une ambiance, une intention… 
-                            Vous nous partagez ce qui compte pour vous.
-                        </p>
-                    </div>
-                    
-                    <div class="text-left">
-                        <div class="step-number mb-6">02</div>
-                        <h3 class="mb-3">Une première création prend forme</h3>
-                        <p class="text-xs text-gray-500">
-                            À partir de votre récit, nous utilisons l'IA pour donner naissance à une première base sur-mesure.
-                        </p>
-                    </div>
-                    
-                    <div class="text-left">
-                        <div class="step-number mb-6">03</div>
-                        <h3 class="mb-3">La musique évolue avec vous</h3>
-                        <p class="text-xs text-gray-500">
-                            Rythme, émotion, intensité… Chaque détail est ajusté jusqu'à ce que la musique vous ressemble vraiment.
-                        </p>
-                    </div>
-                </div>
+            <div class="text-left step-card">
+              <div class="step-number mb-6">02</div>
+              <h3 class="mb-3">Une première création prend forme</h3>
+              <p class="text-xs md:text-sm text-gray-500">
+                À partir de votre récit, nous utilisons des outils de création musicale assistée
+                par intelligence artificielle pour donner naissance à une première base sur-mesure.
+              </p>
             </div>
+
+            <div class="text-left step-card">
+              <div class="step-number mb-6">03</div>
+              <h3 class="mb-3">La musique évolue avec vous</h3>
+              <p class="text-xs md:text-sm text-gray-500">
+                Rythme, émotion, intensité… Chaque détail est ajusté jusqu'à ce que la musique vous ressemble vraiment.
+              </p>
+            </div>
+
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Couples Section -->
@@ -280,26 +297,51 @@ metaDesc: Transformez votre histoire d'amour en musique. NOTTALYS crée des chan
 
 </main>
 
+
+
+<!-- ============================================
+     Alpine.js Steps Scroll
+============================================ -->
 <script>
-// Steps scroll avec Alpine.js
 function stepsScroll() {
   return {
     hasLeft: false,
-    hasRight: true,
-    
+    hasRight: true, // Initial : gradient droite visible
+
     init() {
-      this.updateGradients();
+      // Vérifier immédiatement après le rendu
+      this.$nextTick(() => {
+        this.updateGradients();
+      });
+
+      // Re-check après un petit délai
+      setTimeout(() => {
+        this.updateGradients();
+      }, 200);
+
+      // Vérifier au resize
+      window.addEventListener('resize', () => {
+        if (window.innerWidth < 768) {
+          this.updateGradients();
+        }
+      });
     },
-    
+
     updateGradients() {
       const el = this.$refs.container;
       if (!el) return;
-      
-      const scrollLeft = el.scrollLeft;
+
+      const scrollLeft = Math.round(el.scrollLeft);
       const maxScroll = el.scrollWidth - el.clientWidth;
-      
-      this.hasLeft = scrollLeft > 10;
-      this.hasRight = scrollLeft < maxScroll - 10;
+
+      // Gradient gauche : visible si on a scrollé de plus de 5px
+      this.hasLeft = scrollLeft > 5;
+
+      // Gradient droite : visible s'il reste plus de 5px à scroller
+      this.hasRight = scrollLeft < maxScroll - 5;
+
+      // Debug (à retirer en production)
+      console.log('Scroll:', { scrollLeft, maxScroll, hasLeft: this.hasLeft, hasRight: this.hasRight });
     }
   };
 }

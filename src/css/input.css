@@ -219,24 +219,41 @@
 }
 
 /* ============================================
+   Desktop = Grid normal
+============================================ */
+@media (min-width: 768px) {
+  .steps-scroll {
+    @apply grid grid-cols-3 gap-16 overflow-visible;
+  }
+  .step-card {
+    width: auto;
+  }
+}
+
+/* ============================================
    Mobile Specific
-   ============================================ */
+============================================ */
 @media (max-width: 768px) {
-  /* Scroll horizontal pour steps */
-  .steps-scroll-mobile {
-    @apply flex gap-6 overflow-x-auto snap-x snap-mandatory
-           scrollbar-hide pl-6 pr-24;
+  .steps-scroll {
+    @apply flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    scroll-padding-left: 2.5rem; /* largeur du gradient + un peu d’air */
+    scroll-padding-right: 2.5rem;
   }
-  
-  .steps-scroll-mobile > * {
-    @apply flex-none w-[280px] snap-start;
+
+  /* Cards */
+  .step-card {
+    @apply flex-none snap-start;
+    width: 70vw;
   }
-  
+
   /* Hide scrollbar */
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
-  
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
