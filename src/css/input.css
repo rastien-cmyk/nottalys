@@ -78,7 +78,7 @@
   
   /* Section avec scroll reveal */
   .section-animate {
-    @apply opacity-0 translate-y-8 transition-all duration-1000;
+    @apply opacity-0 translate-y-8 transition-all duration-700;
   }
   
   .section-animate.visible {
@@ -128,7 +128,7 @@
   
   /* Step number */
   .step-number {
-    @apply font-sans text-6xl md:text-[64px] font-normal text-gray-200 leading-none;
+    @apply text-6xl md:text-[64px] font-light text-gray-200 leading-none;
   }
   
   /* Back link */
@@ -163,35 +163,6 @@
   
   .animate-fade-in-up-delay-3 {
     animation: fadeInUp 1s ease-out 0.6s both;
-  }
-  
-  /* Gradient fade pour scroll horizontal */
-  .scroll-gradient-left {
-    @apply relative;
-  }
-  
-  .scroll-gradient-left::before {
-    @apply content-[''] absolute left-0 top-0 h-full w-20 
-           pointer-events-none opacity-0 transition-opacity duration-300
-           bg-gradient-to-r from-white to-transparent;
-  }
-  
-  .scroll-gradient-left.has-left-gradient::before {
-    @apply opacity-100;
-  }
-  
-  .scroll-gradient-right {
-    @apply relative;
-  }
-  
-  .scroll-gradient-right::after {
-    @apply content-[''] absolute right-0 top-0 h-full w-20 
-           pointer-events-none opacity-0 transition-opacity duration-300
-           bg-gradient-to-l from-white to-transparent;
-  }
-  
-  .scroll-gradient-right.has-right-gradient::after {
-    @apply opacity-100;
   }
 }
 
@@ -240,7 +211,7 @@
     margin-right: calc(50% - 50vw);
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-    scroll-padding-left: 2.5rem; /* largeur du gradient + un peu d’air */
+    scroll-padding-left: 2.5rem; /* largeur du gradient + un peu d'air */
     scroll-padding-right: 2.5rem;
   }
 

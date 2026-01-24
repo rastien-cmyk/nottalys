@@ -1,0 +1,633 @@
+---
+layout: base.njk
+metaTitle: FAQ - Questions fréquentes | NOTTALYS
+metaDesc: Toutes vos questions sur les chansons de mariage personnalisées NOTTALYS. Découvrez comment l'IA crée une musique unique pour votre union.
+---
+
+<!-- Back Header -->
+<div class="sticky top-0 left-0 right-0 bg-white/70 backdrop-blur-xl px-6 py-4 z-50 shadow-sm">
+    <div class="max-w-[1200px] mx-auto flex items-center justify-between">
+        <a href="/" class="back-link">
+            <span class="text-2xl leading-none">←</span>
+            <span class="hidden md:inline">RETOUR</span>
+        </a>
+        
+        <div class="absolute left-1/2 transform -translate-x-1/2">
+            <a href="/#">
+                <img src="/media/images/logo-nottalys.svg" alt="Nottalys logo" class="h-10" />
+            </a>
+        </div>
+    </div>
+</div>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero-overlay text-center py-20 md:py-32 px-6" style="background-image: url(/media/images/hero.webp);">
+        <div class="container-nottalys px-6">
+            <h1 class="mb-6 animate-fade-in-up">
+                Questions fréquentes
+            </h1>
+            <p class="text-sm md:text-base text-gray-600 mb-8 font-sans max-w-3xl mx-auto animate-fade-in-up-delay-1">
+                Tout ce que vous devez savoir sur les chansons de mariage personnalisées NOTTALYS
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ Sections -->
+    <section class="py-16 md:py-24">
+        <div class="container-nottalys px-6 max-w-4xl">
+            
+            <!-- Section 1: Le concept -->
+            <div class="mb-16 section-animate">
+                <h2 class="text-2xl md:text-3xl mb-8 pb-4 border-b border-gray-200">
+                    🎵 À propos de NOTTALYS
+                </h2>
+                
+                <div x-data="{ open: [0] }" class="space-y-4">
+                    <!-- Question 1 -->
+                    <div class="bg-white rounded-[10px] shadow-sm overflow-hidden">
+                        <button 
+                            @click="open.includes(0) ? open = open.filter(i => i !== 0) : open.push(0)"
+                            class="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                        >
+                            <span class="font-sans font-medium text-gray-900 pr-4">
+                                Qu'est-ce que NOTTALYS ?
+                            </span>
+                            <svg 
+                                class="w-5 h-5 text-nottalys-purple flex-shrink-0 transition-transform duration-200"
+                                :class="{ 'rotate-180': open.includes(0) }"
+                                fill="none" 
+                                stroke="currentColor" 
+                                viewBox="0 0 24 24"
+                            >
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div 
+                            x-show="open.includes(0)"
+                            x-transition:enter="transition ease-out duration-200"
+                            x-transition:enter-start="opacity-0 -translate-y-2"
+                            x-transition:enter-end="opacity-100 translate-y-0"
+                            class="px-6 pb-5"
+                        >
+                            <p class="text-sm md:text-base text-gray-600 font-sans leading-relaxed">
+                                NOTTALYS crée des chansons de mariage personnalisées à partir de votre histoire, de vos prénoms 
+                                et de vos moments importants. Chaque musique est conçue pour accompagner un moment clé de votre 
+                                journée : cérémonie, première danse, ouverture de bal ou vin d'honneur.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="bg-white rounded-[10px] shadow-sm overflow-hidden">
+                        <button 
+                            @click="open.includes(1) ? open = open.filter(i => i !== 1) : open.push(1)"
+                            class="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                        >
+                            <span class="font-sans font-medium text-gray-900 pr-4">
+                                Est-ce une vraie chanson ou un simple montage ?
+                            </span>
+                            <svg 
+                                class="w-5 h-5 text-nottalys-purple flex-shrink-0 transition-transform duration-200"
+                                :class="{ 'rotate-180': open.includes(1) }"
+                                fill="none" 
+                                stroke="currentColor" 
+                                viewBox="0 0 24 24"
+                            >
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div 
+                            x-show="open.includes(1)"
+                            x-transition
+                            class="px-6 pb-5"
+                        >
+                            <p class="text-sm md:text-base text-gray-600 font-sans leading-relaxed">
+                                C'est une véritable chanson originale, avec paroles, musique et voix, créée spécialement pour votre couple.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: Personnalisation -->
+            <div class="mb-16 section-animate">
+                <h2 class="text-2xl md:text-3xl mb-8 pb-4 border-b border-gray-200">
+                    💍 Personnalisation
+                </h2>
+                
+                <div x-data="{ open: [] }" class="space-y-4">
+                    <!-- Question 3 -->
+                    <div class="bg-white rounded-[10px] shadow-sm overflow-hidden">
+                        <button 
+                            @click="open.includes(3) ? open = open.filter(i => i !== 3) : open.push(3)"
+                            class="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                        >
+                            <span class="font-sans font-medium text-gray-900 pr-4">
+                                Qu'est-ce qui est personnalisé exactement ?
+                            </span>
+                            <svg 
+                                class="w-5 h-5 text-nottalys-purple flex-shrink-0 transition-transform duration-200"
+                                :class="{ 'rotate-180': open.includes(3) }"
+                                fill="none" 
+                                stroke="currentColor" 
+                                viewBox="0 0 24 24"
+                            >
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div 
+                            x-show="open.includes(3)"
+                            x-transition
+                            class="px-6 pb-5"
+                        >
+                            <p class="text-sm md:text-base text-gray-600 font-sans leading-relaxed mb-3">
+                                Nous pouvons intégrer :
+                            </p>
+                            <ul class="space-y-2 text-sm md:text-base text-gray-600 font-sans">
+                                <li class="flex items-start gap-3">
+                                    <span class="text-nottalys-purple mt-1">•</span>
+                                    <span>Vos prénoms</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-nottalys-purple mt-1">•</span>
+                                    <span>Votre lieu de rencontre ou de mariage</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-nottalys-purple mt-1">•</span>
+                                    <span>Une date importante</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-nottalys-purple mt-1">•</span>
+                                    <span>Des détails personnels (gestes, souvenirs, ambiance, couleurs, enfants, proches…)</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="bg-white rounded-[10px] shadow-sm overflow-hidden">
+                        <button 
+                            @click="open.includes(4) ? open = open.filter(i => i !== 4) : open.push(4)"
+                            class="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                        >
+                            <span class="font-sans font-medium text-gray-900 pr-4">
+                                Peut-on choisir le style musical ?
+                            </span>
+                            <svg 
+                                class="w-5 h-5 text-nottalys-purple flex-shrink-0 transition-transform duration-200"
+                                :class="{ 'rotate-180': open.includes(4) }"
+                                fill="none" 
+                                stroke="currentColor" 
+                                viewBox="0 0 24 24"
+                            >
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div 
+                            x-show="open.includes(4)"
+                            x-transition
+                            class="px-6 pb-5"
+                        >
+                            <p class="text-sm md:text-base text-gray-600 font-sans leading-relaxed">
+                                Oui. Vous pouvez indiquer le style souhaité : émotionnel, pop, électro, acoustique, moderne, dansant, etc.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="bg-white rounded-[10px] shadow-sm overflow-hidden">
+                        <button 
+                            @click="open.includes(5) ? open = open.filter(i => i !== 5) : open.push(5)"
+                            class="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                        >
+                            <span class="font-sans font-medium text-gray-900 pr-4">
+                                Est-ce que d'autres couples auront la même chanson que nous ?
+                            </span>
+                            <svg 
+                                class="w-5 h-5 text-nottalys-purple flex-shrink-0 transition-transform duration-200"
+                                :class="{ 'rotate-180': open.includes(5) }"
+                                fill="none" 
+                                stroke="currentColor" 
+                                viewBox="0 0 24 24"
+                            >
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div 
+                            x-show="open.includes(5)"
+                            x-transition
+                            class="px-6 pb-5"
+                        >
+                            <p class="text-sm md:text-base text-gray-600 font-sans leading-relaxed">
+                                Non. Chaque chanson est créée à partir de votre histoire. Deux couples n'obtiennent jamais le même résultat.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3: Intelligence artificielle -->
+            <div class="mb-16 section-animate">
+                <h2 class="text-2xl md:text-3xl mb-8 pb-4 border-b border-gray-200">
+                    🤖 Intelligence artificielle
+                </h2>
+                
+                <div x-data="{ open: [] }" class="space-y-4">
+                    <!-- Question 6 -->
+                    <div class="bg-white rounded-[10px] shadow-sm overflow-hidden">
+                        <button 
+                            @click="open.includes(6) ? open = open.filter(i => i !== 6) : open.push(6)"
+                            class="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                        >
+                            <span class="font-sans font-medium text-gray-900 pr-4">
+                                Utilisez-vous l'intelligence artificielle ?
+                            </span>
+                            <svg 
+                                class="w-5 h-5 text-nottalys-purple flex-shrink-0 transition-transform duration-200"
+                                :class="{ 'rotate-180': open.includes(6) }"
+                                fill="none" 
+                                stroke="currentColor" 
+                                viewBox="0 0 24 24"
+                            >
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div 
+                            x-show="open.includes(6)"
+                            x-transition
+                            class="px-6 pb-5"
+                        >
+                            <p class="text-sm md:text-base text-gray-600 font-sans leading-relaxed">
+                                Oui. NOTTALYS utilise l'intelligence artificielle comme outil de création musicale, 
+                                guidée par les informations que vous nous transmettez.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Question 7 -->
+                    <div class="bg-white rounded-[10px] shadow-sm overflow-hidden">
+                        <button 
+                            @click="open.includes(7) ? open = open.filter(i => i !== 7) : open.push(7)"
+                            class="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                        >
+                            <span class="font-sans font-medium text-gray-900 pr-4">
+                                L'IA remplace-t-elle un humain ?
+                            </span>
+                            <svg 
+                                class="w-5 h-5 text-nottalys-purple flex-shrink-0 transition-transform duration-200"
+                                :class="{ 'rotate-180': open.includes(7) }"
+                                fill="none" 
+                                stroke="currentColor" 
+                                viewBox="0 0 24 24"
+                            >
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div 
+                            x-show="open.includes(7)"
+                            x-transition
+                            class="px-6 pb-5"
+                        >
+                            <p class="text-sm md:text-base text-gray-600 font-sans leading-relaxed">
+                                Non. L'IA est un outil créatif, mais chaque projet est guidé et ajusté pour correspondre 
+                                à votre histoire et à votre intention émotionnelle.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Question 8 -->
+                    <div class="bg-white rounded-[10px] shadow-sm overflow-hidden">
+                        <button 
+                            @click="open.includes(8) ? open = open.filter(i => i !== 8) : open.push(8)"
+                            class="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                        >
+                            <span class="font-sans font-medium text-gray-900 pr-4">
+                                Pourquoi utiliser l'IA ?
+                            </span>
+                            <svg 
+                                class="w-5 h-5 text-nottalys-purple flex-shrink-0 transition-transform duration-200"
+                                :class="{ 'rotate-180': open.includes(8) }"
+                                fill="none" 
+                                stroke="currentColor" 
+                                viewBox="0 0 24 24"
+                            >
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div 
+                            x-show="open.includes(8)"
+                            x-transition
+                            class="px-6 pb-5"
+                        >
+                            <p class="text-sm md:text-base text-gray-600 font-sans leading-relaxed mb-3">
+                                Elle permet :
+                            </p>
+                            <ul class="space-y-2 text-sm md:text-base text-gray-600 font-sans">
+                                <li class="flex items-start gap-3">
+                                    <span class="text-nottalys-purple mt-1">•</span>
+                                    <span>Une grande flexibilité de style</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-nottalys-purple mt-1">•</span>
+                                    <span>Une création rapide</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-nottalys-purple mt-1">•</span>
+                                    <span>Une personnalisation très fine</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-nottalys-purple mt-1">•</span>
+                                    <span>Un coût plus accessible qu'un studio traditionnel</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: Le jour J -->
+            <div class="mb-16 section-animate">
+                <h2 class="text-2xl md:text-3xl mb-8 pb-4 border-b border-gray-200">
+                    🕊️ Le jour du mariage
+                </h2>
+                
+                <div x-data="{ open: [] }" class="space-y-4">
+                    <!-- Question 9 -->
+                    <div class="bg-white rounded-[10px] shadow-sm overflow-hidden">
+                        <button 
+                            @click="open.includes(9) ? open = open.filter(i => i !== 9) : open.push(9)"
+                            class="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                        >
+                            <span class="font-sans font-medium text-gray-900 pr-4">
+                                Quand et comment diffuser la chanson ?
+                            </span>
+                            <svg 
+                                class="w-5 h-5 text-nottalys-purple flex-shrink-0 transition-transform duration-200"
+                                :class="{ 'rotate-180': open.includes(9) }"
+                                fill="none" 
+                                stroke="currentColor" 
+                                viewBox="0 0 24 24"
+                            >
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div 
+                            x-show="open.includes(9)"
+                            x-transition
+                            class="px-6 pb-5"
+                        >
+                            <p class="text-sm md:text-base text-gray-600 font-sans leading-relaxed mb-3">
+                                Vous recevez votre musique au format audio (mp3/wav). Vous pouvez :
+                            </p>
+                            <ul class="space-y-2 text-sm md:text-base text-gray-600 font-sans">
+                                <li class="flex items-start gap-3">
+                                    <span class="text-nottalys-purple mt-1">•</span>
+                                    <span>La confier à votre DJ</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-nottalys-purple mt-1">•</span>
+                                    <span>La lancer depuis une enceinte</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-nottalys-purple mt-1">•</span>
+                                    <span>L'intégrer à votre montage vidéo</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-nottalys-purple mt-1">•</span>
+                                    <span>L'utiliser pour votre entrée ou votre première danse</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Question 10 -->
+                    <div class="bg-white rounded-[10px] shadow-sm overflow-hidden">
+                        <button 
+                            @click="open.includes(10) ? open = open.filter(i => i !== 10) : open.push(10)"
+                            class="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                        >
+                            <span class="font-sans font-medium text-gray-900 pr-4">
+                                Est-ce adapté pour une cérémonie laïque ou religieuse ?
+                            </span>
+                            <svg 
+                                class="w-5 h-5 text-nottalys-purple flex-shrink-0 transition-transform duration-200"
+                                :class="{ 'rotate-180': open.includes(10) }"
+                                fill="none" 
+                                stroke="currentColor" 
+                                viewBox="0 0 24 24"
+                            >
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div 
+                            x-show="open.includes(10)"
+                            x-transition
+                            class="px-6 pb-5"
+                        >
+                            <p class="text-sm md:text-base text-gray-600 font-sans leading-relaxed">
+                                Oui, tant que le style est adapté au ton de votre cérémonie. Nous pouvons créer une version 
+                                douce et solennelle si besoin.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 5: Prix et fonctionnement -->
+            <div class="mb-16 section-animate">
+                <h2 class="text-2xl md:text-3xl mb-8 pb-4 border-b border-gray-200">
+                    💰 Prix et fonctionnement
+                </h2>
+                
+                <div x-data="{ open: [] }" class="space-y-4">
+                    <!-- Question 11 -->
+                    <div class="bg-white rounded-[10px] shadow-sm overflow-hidden">
+                        <button 
+                            @click="open.includes(11) ? open = open.filter(i => i !== 11) : open.push(11)"
+                            class="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                        >
+                            <span class="font-sans font-medium text-gray-900 pr-4">
+                                Pourquoi n'y a-t-il pas de prix affiché ?
+                            </span>
+                            <svg 
+                                class="w-5 h-5 text-nottalys-purple flex-shrink-0 transition-transform duration-200"
+                                :class="{ 'rotate-180': open.includes(11) }"
+                                fill="none" 
+                                stroke="currentColor" 
+                                viewBox="0 0 24 24"
+                            >
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div 
+                            x-show="open.includes(11)"
+                            x-transition
+                            class="px-6 pb-5"
+                        >
+                            <p class="text-sm md:text-base text-gray-600 font-sans leading-relaxed mb-3">
+                                Chaque chanson est unique. Le tarif dépend :
+                            </p>
+                            <ul class="space-y-2 text-sm md:text-base text-gray-600 font-sans mb-3">
+                                <li class="flex items-start gap-3">
+                                    <span class="text-nottalys-purple mt-1">•</span>
+                                    <span>Du niveau de personnalisation</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-nottalys-purple mt-1">•</span>
+                                    <span>Du style</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-nottalys-purple mt-1">•</span>
+                                    <span>Du moment choisi (cérémonie, danse, cocktail…)</span>
+                                </li>
+                            </ul>
+                            <p class="text-sm md:text-base text-gray-600 font-sans leading-relaxed">
+                                Nous préférons échanger avec vous d'abord pour comprendre votre projet.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Question 12 -->
+                    <div class="bg-white rounded-[10px] shadow-sm overflow-hidden">
+                        <button 
+                            @click="open.includes(12) ? open = open.filter(i => i !== 12) : open.push(12)"
+                            class="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                        >
+                            <span class="font-sans font-medium text-gray-900 pr-4">
+                                Est-ce réservé à des mariages haut de gamme ?
+                            </span>
+                            <svg 
+                                class="w-5 h-5 text-nottalys-purple flex-shrink-0 transition-transform duration-200"
+                                :class="{ 'rotate-180': open.includes(12) }"
+                                fill="none" 
+                                stroke="currentColor" 
+                                viewBox="0 0 24 24"
+                            >
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div 
+                            x-show="open.includes(12)"
+                            x-transition
+                            class="px-6 pb-5"
+                        >
+                            <p class="text-sm md:text-base text-gray-600 font-sans leading-relaxed">
+                                Non. NOTTALYS est pensé pour rendre la musique personnalisée accessible, grâce à l'IA.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Question 13 -->
+                    <div class="bg-white rounded-[10px] shadow-sm overflow-hidden">
+                        <button 
+                            @click="open.includes(13) ? open = open.filter(i => i !== 13) : open.push(13)"
+                            class="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                        >
+                            <span class="font-sans font-medium text-gray-900 pr-4">
+                                Comment se passe la commande ?
+                            </span>
+                            <svg 
+                                class="w-5 h-5 text-nottalys-purple flex-shrink-0 transition-transform duration-200"
+                                :class="{ 'rotate-180': open.includes(13) }"
+                                fill="none" 
+                                stroke="currentColor" 
+                                viewBox="0 0 24 24"
+                            >
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div 
+                            x-show="open.includes(13)"
+                            x-transition
+                            class="px-6 pb-5"
+                        >
+                            <ol class="space-y-3 text-sm md:text-base text-gray-600 font-sans">
+                                <li class="flex items-start gap-3">
+                                    <span class="text-nottalys-purple font-medium">1.</span>
+                                    <span>Vous nous racontez votre histoire</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-nottalys-purple font-medium">2.</span>                    
+                                     <span>Nous vous recontactons pour préciser votre projet</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-nottalys-purple font-medium">3.</span>
+                                    <span>Nous créons votre chanson personnalisée</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-nottalys-purple font-medium">4.</span>
+                                    <span>Vous recevez votre musique prête à être diffusée</span>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <!-- Question 14 -->
+                    <div class="bg-white rounded-[10px] shadow-sm overflow-hidden">
+                        <button 
+                            @click="open.includes(14) ? open = open.filter(i => i !== 14) : open.push(14)"
+                            class="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                        >
+                            <span class="font-sans font-medium text-gray-900 pr-4">
+                                Combien de temps faut-il pour recevoir la chanson ?
+                            </span>
+                            <svg 
+                                class="w-5 h-5 text-nottalys-purple flex-shrink-0 transition-transform duration-200"
+                                :class="{ 'rotate-180': open.includes(14) }"
+                                fill="none" 
+                                stroke="currentColor" 
+                                viewBox="0 0 24 24"
+                            >
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div 
+                            x-show="open.includes(14)"
+                            x-transition
+                            class="px-6 pb-5"
+                        >
+                            <p class="text-sm md:text-base text-gray-600 font-sans leading-relaxed">
+                                Le délai dépend du niveau de personnalisation, mais en général la création prend quelques jours. 
+                                Nous nous adaptons à votre date de mariage lorsque cela est précisé dès le départ.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Question 15 -->
+                    <div class="bg-white rounded-[10px] shadow-sm overflow-hidden">
+                        <button 
+                            @click="open.includes(15) ? open = open.filter(i => i !== 15) : open.push(15)"
+                            class="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                        >
+                            <span class="font-sans font-medium text-gray-900 pr-4">
+                                Comment vous contacter ?
+                            </span>
+                            <svg 
+                                class="w-5 h-5 text-nottalys-purple flex-shrink-0 transition-transform duration-200"
+                                :class="{ 'rotate-180': open.includes(15) }"
+                                fill="none" 
+                                stroke="currentColor" 
+                                viewBox="0 0 24 24"
+                            >
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div 
+                            x-show="open.includes(15)"
+                            x-transition
+                            class="px-6 pb-5"
+                        >
+                            <p class="text-sm md:text-base text-gray-600 font-sans leading-relaxed">
+                                Vous pouvez nous contacter via le formulaire du site pour nous parler de votre projet. 
+                                Nous vous répondrons rapidement pour imaginer ensemble la chanson qui accompagnera votre mariage.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
