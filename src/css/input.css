@@ -78,7 +78,7 @@
   
   /* Section avec scroll reveal */
   .section-animate {
-    @apply opacity-0 translate-y-8 transition-all duration-700;
+    @apply opacity-0 translate-y-8 transition-all duration-1000;
   }
   
   .section-animate.visible {
@@ -128,7 +128,7 @@
   
   /* Step number */
   .step-number {
-    @apply text-6xl md:text-[64px] font-light text-gray-200 leading-none;
+    @apply font-sans text-6xl md:text-[64px] font-normal text-gray-200 leading-none;
   }
   
   /* Back link */
