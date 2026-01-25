@@ -12,9 +12,10 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif font-normal;
+    /*@apply font-serif font-normal;*/
+      font-family: 'Prata', serif; /* Force Prata */
   }
-  
+
   h1 {
     @apply text-5xl md:text-7xl leading-tight;
   }
@@ -28,7 +29,8 @@
   }
   
   p {
-    @apply font-sans text-sm md:text-base leading-loose;
+    /*@apply font-sans text-sm md:text-base leading-loose; */
+    font-family: 'DM Sans', sans-serif; /* Force DM Sans */
   }
 }
 
