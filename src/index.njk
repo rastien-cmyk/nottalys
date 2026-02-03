@@ -7,7 +7,7 @@ metaDesc: Transformez votre histoire d'amour en musique. NOTTALYS crée des chan
 <!-- Header Desktop -->
 <header class="hidden md:flex items-center justify-between py-8 px-6 max-w-[1400px] mx-auto">
     <div class="w-[175px]">
-        <img src="media/images/logo-nottalys.svg" alt="Nottalys logo" width="175" height="43" />
+        <img src="/media/images/logo-nottalys.svg" alt="Nottalys logo" width="175" height="43" />
     </div>
 </header>
 
@@ -41,7 +41,7 @@ metaDesc: Transformez votre histoire d'amour en musique. NOTTALYS crée des chan
         <!-- Logo centré -->
         <div class="absolute left-1/2 transform -translate-x-1/2">
             <a href="/#">
-                <img src="media/images/logo-nottalys.svg" alt="Nottalys logo" class="h-10" />
+                <img src="/media/images/logo-nottalys.svg" alt="Nottalys logo" class="h-10" />
             </a>
         </div>
     </div>
@@ -81,10 +81,8 @@ metaDesc: Transformez votre histoire d'amour en musique. NOTTALYS crée des chan
 
 <main>
     <!-- Hero Section -->
-    <section 
-        class="hero-overlay text-center py-20 md:py-32 px-6" 
-        style="background-image: url(media/images/hero.webp);"
-    >
+    <section class="hero-overlay text-center py-20 md:py-32 px-6" style="background-image: url(/media/images/hero.webp);">
+
         <div class="container-nottalys">
             <h1 class="mb-6 animate-fade-in-up">
                 Votre histoire,<br>mise en musique
@@ -98,10 +96,7 @@ metaDesc: Transformez votre histoire d'amour en musique. NOTTALYS crée des chan
         </div>
     </section>
 
-    <!-- Stats Bar avec animations Lottie -->
-
-
-
+ <!-- Stats Bar avec animations Lottie -->
     <div class="flex flex-col md:flex-row justify-around items-center gap-6 md:gap-0 py-12 md:py-16 px-6 text-xs md:text-sm text-gray-500 font-sans"
   x-data="lottieCycleController(
     ['icon1', 'icon2', 'icon3'],
@@ -117,26 +112,26 @@ metaDesc: Transformez votre histoire d'amour en musique. NOTTALYS crée des chan
   )"
   x-init="init()"
     >
-
         <!-- Point 1 : 100% personnalisée - Crayon -->
         <div class="flex flex-col items-center gap-2 animate-on-scroll"
         >
             <div x-ref="icon1" class="w-16 h-16"></div>
             <div>100 % personnalisée</div>
         </div>
-        
+
         <!-- Point 2 : Créée à partir de votre histoire - Livre -->
         <div class="flex flex-col items-center gap-2 animate-on-scroll">
             <div x-ref="icon2" class="w-16 h-16"></div>
             <div>Créée à partir de votre histoire</div>
         </div>
-        
+
         <!-- Point 3 : Un souvenir qui dure - Vinyle -->
         <div class="flex flex-col items-center gap-2 animate-on-scroll">
             <div x-ref="icon3" class="w-16 h-16"></div>
             <div>Un souvenir qui dure</div>
         </div>
     </div>
+
 
     <!-- Feature Section: Pourquoi -->
     <section id="pourquoi" class="py-16 md:py-24 px-6 section-animate">
@@ -145,7 +140,7 @@ metaDesc: Transformez votre histoire d'amour en musique. NOTTALYS crée des chan
                 <!-- Image sticky sur desktop -->
                 <div class="md:sticky md:top-32 h-[300px] md:h-[600px]">
                     <img 
-                        src="media/images/casque.webp" 
+                        src="/media/images/casque.webp" 
                         alt="Casque audio évoquant la composition d'une chanson de mariage sur mesure" 
                         class="w-full h-full object-cover rounded-[10px] hover:scale-105 transition-transform duration-500"
                         loading="lazy"
@@ -158,10 +153,11 @@ metaDesc: Transformez votre histoire d'amour en musique. NOTTALYS crée des chan
                     class="space-y-8 font-sans"
                 >
                     <div>
-                        <h2 class="mb-6 leading-tight">Une musique de mariage vraiment personnalisée</h2>
-                        
+                        <h2 class="mb-6 leading-tight animate-fade-in-up">Une musique de mariage vraiment personnalisée</h2>
+                        <h2 class="mb-6 leading-tight section-animate">Une musique de mariage vraiment personnalisée</h2>
+
                         <!-- Paragraphes toujours visibles (≈ 300 caractères) -->
-                        <p class="text-gray-600 mb-4">
+                        <p class="text-gray-600 mb-4  animate-fade-in-up">
                             Chaque histoire d'amour possède son propre rythme, ses émotions, ses instants fondateurs. 
                             Chez NOTTALYS, nous créons des chansons de mariage personnalisées à partir de votre récit, 
                             de votre rencontre, de vos souvenirs et de ce qui fait la singularité de votre union.
@@ -170,7 +166,7 @@ metaDesc: Transformez votre histoire d'amour en musique. NOTTALYS crée des chan
                             Contrairement aux musiques génériques, votre chanson est composée exclusivement pour vous. 
                             Elle ne sera jamais réutilisée, ni adaptée à un autre couple.
                         </p>
-                        
+
                         <!-- Contenu caché sur mobile jusqu'au clic "Voir plus" -->
                         <div 
                             x-show="expanded || window.innerWidth >= 768"
@@ -184,7 +180,7 @@ metaDesc: Transformez votre histoire d'amour en musique. NOTTALYS crée des chan
                                 les plus importants de votre vie.
                             </p>
                         </div>
-                        
+
                         <!-- Bouton "Voir plus" (mobile uniquement) -->
                         <button
                             @click="expanded = !expanded"
@@ -194,7 +190,7 @@ metaDesc: Transformez votre histoire d'amour en musique. NOTTALYS crée des chan
                             Voir plus
                         </button>
                     </div>
-                    
+
                     <!-- Sections suivantes : cachées sur mobile si non expanded -->
                     <div 
                         x-show="expanded || window.innerWidth >= 768"
@@ -214,7 +210,7 @@ metaDesc: Transformez votre histoire d'amour en musique. NOTTALYS crée des chan
                                 dans le temps et garde intacte l'émotion de votre union.
                             </p>
                         </div>
-                        
+
                         <div>
                             <h3 class="text-xl md:text-2xl mb-4 font-serif">Comment naît votre chanson NOTTALYS</h3>
                             <p class="text-gray-600 mb-4">
@@ -235,123 +231,87 @@ metaDesc: Transformez votre histoire d'amour en musique. NOTTALYS crée des chan
         </div>
     </section>
 
+
     <!-- Steps Section -->
+
     <section id="process" class="py-16 md:py-24 px-6 section-animate">
-        <div class="container-nottalys">
-            <h2 class="text-center mb-16">Trois étapes vers votre chanson</h2>
-            
-            <!-- Grid desktop / Scroll horizontal mobile -->
-            <div class="hidden md:grid md:grid-cols-3 gap-16">
-                <div class="text-left">
-                    <div class="step-number mb-6">01</div>
-                    <h3 class="mb-3">Vous nous racontez votre histoire</h3>
-                    <p class="text-xs md:text-sm text-gray-500">
-                        Quelques mots suffisent. Un souvenir, une émotion, une ambiance, une intention… 
-                        Vous nous partagez ce qui compte pour vous, sans contrainte ni vocabulaire technique.
-                    </p>
-                </div>
-                
-                <div class="text-left">
-                    <div class="step-number mb-6">02</div>
-                    <h3 class="mb-3">Une première création prend forme</h3>
-                    <p class="text-xs md:text-sm text-gray-500">
-                        À partir de votre récit, nous utilisons des outils de création musicale assistée par intelligence 
-                        artificielle pour donner naissance à une première base sur-mesure. L'IA nous permet d'explorer 
-                        rapidement différentes ambiances et de rester au plus proche de votre histoire.
-                    </p>
-                </div>
-                
-                <div class="text-left">
-                    <div class="step-number mb-6">03</div>
-                    <h3 class="mb-3">La musique évolue avec vous</h3>
-                    <p class="text-xs md:text-sm text-gray-500">
-                        Rythme, émotion, intensité, atmosphère… Chaque détail est ajusté jusqu'à ce que 
-                        la musique vous ressemble vraiment.
-                    </p>
-                </div>
+      <div class="container-nottalys">
+        <h2 class="text-center mb-16">Trois étapes vers votre chanson</h2>
+
+        <div x-data="stepsScroll()" x-init="init()" class="relative">
+
+          <!-- Gradient gauche (mobile only) -->
+          <div x-show="hasLeft"
+               class="md:hidden fixed left-0 top-0 h-full w-8 pointer-events-none z-10
+                      bg-gradient-to-r from-white via-white/80 to-transparent
+                      transition-opacity duration-300"
+               :class="{ 'opacity-0': !hasLeft, 'opacity-100': hasLeft }">
+          </div>
+
+          <!-- Gradient droite (mobile only) -->
+          <div x-show="hasRight"
+               class="md:hidden fixed right-0 top-0 h-full w-8 pointer-events-none z-10
+                      bg-gradient-to-l from-white via-white/80 to-transparent
+                      transition-opacity duration-300"
+               :class="{ 'opacity-0': !hasRight, 'opacity-100': hasRight }">
+          </div>
+
+          <div x-ref="container" @scroll.passive="updateGradients()" class="steps-scroll">
+
+            <div class="text-left step-card">
+              <div class="step-number mb-6">01</div>
+              <h3 class="mb-3">Vous nous racontez votre histoire</h3>
+              <p class="text-xs md:text-sm text-gray-500">
+                Quelques mots suffisent. Un souvenir, une émotion, une ambiance, une intention…
+                Vous nous partagez ce qui compte pour vous, sans contrainte ni vocabulaire technique.
+              </p>
             </div>
 
-            <!-- Mobile: scroll horizontal -->
-            <div 
-                x-data="stepsScroll()" 
-                x-init="init()" 
-                class="md:hidden relative"
-            >
-                <!-- Gradient gauche -->
-                <div 
-                    x-show="hasLeft"
-                    class="absolute left-0 top-0 h-full w-24 pointer-events-none z-10 
-                           bg-gradient-to-r from-white via-white/80 to-transparent
-                           transition-opacity duration-300"
-                    :class="{ 'opacity-0': !hasLeft, 'opacity-100': hasLeft }"
-                ></div>
-                
-                <!-- Gradient droite -->
-                <div 
-                    x-show="hasRight"
-                    class="absolute right-0 top-0 h-full w-24 pointer-events-none z-10 
-                           bg-gradient-to-l from-white via-white/80 to-transparent
-                           transition-opacity duration-300"
-                    :class="{ 'opacity-0': !hasRight, 'opacity-100': hasRight }"
-                ></div>
-                
-                <div 
-                    x-ref="container"
-                    @scroll.passive="updateGradients()"
-                    class="steps-scroll-mobile"
-                >
-                    <div class="text-left">
-                        <div class="step-number mb-6">01</div>
-                        <h3 class="mb-3">Vous nous racontez votre histoire</h3>
-                        <p class="text-xs text-gray-500">
-                            Quelques mots suffisent. Un souvenir, une émotion, une ambiance, une intention… 
-                            Vous nous partagez ce qui compte pour vous.
-                        </p>
-                    </div>
-                    
-                    <div class="text-left">
-                        <div class="step-number mb-6">02</div>
-                        <h3 class="mb-3">Une première création prend forme</h3>
-                        <p class="text-xs text-gray-500">
-                            À partir de votre récit, nous utilisons l'IA pour donner naissance à une première base sur-mesure.
-                        </p>
-                    </div>
-                    
-                    <div class="text-left">
-                        <div class="step-number mb-6">03</div>
-                        <h3 class="mb-3">La musique évolue avec vous</h3>
-                        <p class="text-xs text-gray-500">
-                            Rythme, émotion, intensité… Chaque détail est ajusté jusqu'à ce que la musique vous ressemble vraiment.
-                        </p>
-                    </div>
-                </div>
+            <div class="text-left step-card">
+              <div class="step-number mb-6">02</div>
+              <h3 class="mb-3">Une première création prend forme</h3>
+              <p class="text-xs md:text-sm text-gray-500">
+                À partir de votre récit, nous utilisons des outils de création musicale assistée
+                par intelligence artificielle pour donner naissance à une première base sur-mesure.
+              </p>
             </div>
+
+            <div class="text-left step-card">
+              <div class="step-number mb-6">03</div>
+              <h3 class="mb-3">La musique évolue avec vous</h3>
+              <p class="text-xs md:text-sm text-gray-500">
+                Rythme, émotion, intensité… Chaque détail est ajusté jusqu'à ce que la musique vous ressemble vraiment.
+              </p>
+            </div>
+
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Couples Section -->
-    <section class="py-16 md:py-24 px-6 section-animate">
+    <section class="py-16 md:py-24  px-6 section-animate">
         <div class="container-nottalys">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
                     <h2 class="mb-8">Pour les couples<br>qui...</h2>
                     <ul class="space-y-4 font-sans">
-                        <li class="flex items-start gap-4 py-4 border-b border-gray-200">
-                            <span class="text-gray-400 text-sm">01</span>
+                        <li class="flex items-center gap-4 py-4 border-b border-gray-200 whitespace-nowrap">
+                            <span class="text-gray-400 text-lg font-medium">01</span>
                             <span class="text-sm">veulent marquer leur mariage autrement</span>
                         </li>
-                        <li class="flex items-start gap-4 py-4 border-b border-gray-200">
-                            <span class="text-gray-400 text-sm">02</span>
+                        <li class="flex items-center gap-4 py-4 border-b border-gray-200 whitespace-nowrap">
+                            <span class="text-gray-400 text-lg font-medium">02</span>
                             <span class="text-sm">cherchent un souvenir qui dure dans le temps</span>
                         </li>
-                        <li class="flex items-start gap-4 py-4 border-b border-gray-200">
-                            <span class="text-gray-400 text-sm">03</span>
+                        <li class="flex items-center gap-4 py-4 border-b border-gray-200 whitespace-nowrap">
+                            <span class="text-gray-400 text-lg font-medium">03</span>
                             <span class="text-sm">aiment les idées simples, vraies et personnelles</span>
                         </li>
                     </ul>
                 </div>
                 <img 
-                    src="media/images/couples.webp" 
+                    src="/media/images/couples.webp" 
                     alt="Mains de deux personnes entrelacées" 
                     class="w-full h-[300px] md:h-[400px] object-cover rounded-[10px]"
                     loading="lazy"
@@ -366,47 +326,55 @@ metaDesc: Transformez votre histoire d'amour en musique. NOTTALYS crée des chan
 
 </main>
 
+
+
+<!-- ============================================
+     Alpine.js Steps Scroll
+============================================ -->
 <script>
-// Steps scroll avec Alpine.js
 function stepsScroll() {
   return {
     hasLeft: false,
     hasRight: true, // Initial : gradient droite visible
-    
+
     init() {
-      // Vérifier immédiatement
+      // Vérifier immédiatement après le rendu
       this.$nextTick(() => {
         this.updateGradients();
       });
-      
-      // Re-check après un délai pour être sûr
+
+      // Re-check après un petit délai
       setTimeout(() => {
         this.updateGradients();
       }, 200);
-      
-      // Aussi vérifier au resize
+
+      // Vérifier au resize
       window.addEventListener('resize', () => {
         if (window.innerWidth < 768) {
           this.updateGradients();
         }
       });
     },
-    
+
     updateGradients() {
       const el = this.$refs.container;
       if (!el) return;
-      
+
       const scrollLeft = Math.round(el.scrollLeft);
       const maxScroll = el.scrollWidth - el.clientWidth;
-      
+
       // Gradient gauche : visible si on a scrollé de plus de 5px
       this.hasLeft = scrollLeft > 5;
-      
+
       // Gradient droite : visible s'il reste plus de 5px à scroller
       this.hasRight = scrollLeft < maxScroll - 5;
+
+      // Debug (à retirer en production)
+      console.log('Scroll:', { scrollLeft, maxScroll, hasLeft: this.hasLeft, hasRight: this.hasRight });
     }
   };
 }
+
 
 // Animation Lottie avec contrôle du cycle
 function lottieCycleController(refNames, paths, options = {}) {
@@ -415,13 +383,11 @@ function lottieCycleController(refNames, paths, options = {}) {
     currentIndex: 0,
     hasStarted: false,
     animationsLoaded: false,
-
     settings: {
       delayBetween: options.delayBetween || 0,
       loopDelay: options.loopDelay || 500,
       threshold: options.threshold || 0.5
     },
-
     init() {
       if (typeof lottie === "undefined") {
         const script = document.createElement("script");
@@ -431,7 +397,6 @@ function lottieCycleController(refNames, paths, options = {}) {
       } else {
         this.initAnimations();
       }
-
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting && !this.hasStarted) {
@@ -440,20 +405,15 @@ function lottieCycleController(refNames, paths, options = {}) {
           }
         });
       }, { threshold: this.settings.threshold });
-
       observer.observe(this.$el);
     },
-
     initAnimations() {
       if (this.animationsLoaded) return; // 🔒 verrou
       this.animationsLoaded = true;
-
       refNames.forEach((ref, index) => {
         const container = this.$refs[ref];
-
         // 🔥 IMPORTANT : vider le container avant Lottie
         container.innerHTML = "";
-
         const anim = lottie.loadAnimation({
           container: container,
           renderer: "svg",
@@ -461,28 +421,22 @@ function lottieCycleController(refNames, paths, options = {}) {
           autoplay: false,
           path: paths[index]
         });
-
         anim.addEventListener("complete", () => {
           setTimeout(() => this.playNext(), this.settings.delayBetween);
         });
-
         this.animations.push(anim);
       });
     },
-
     startCycle() {
       this.playCurrent();
     },
-
     playCurrent() {
       const anim = this.animations[this.currentIndex];
       if (!anim) return;
       anim.goToAndPlay(0, true);
     },
-
     playNext() {
       this.currentIndex++;
-
       if (this.currentIndex >= this.animations.length) {
         this.currentIndex = 0;
         setTimeout(() => this.playCurrent(), this.settings.loopDelay);
@@ -490,11 +444,9 @@ function lottieCycleController(refNames, paths, options = {}) {
         this.playCurrent();
       }
     },
-
     destroy() {
       this.animations.forEach(anim => anim.destroy());
     }
   };
 }
-
 </script>
